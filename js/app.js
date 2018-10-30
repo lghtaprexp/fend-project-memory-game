@@ -68,7 +68,7 @@ function clickedCard() {
 $('li.card').on('click', function() {
 	let openCard = $(this);
 	toggleOpenShow(openCard);
-	if(openCard.hasClass('open show')
+	if(openCard.hasClass('open show disabled')
 		&& allOpenedCards.length < 2) {
 		allOpenedCards.push(openCard);		
 	}		
@@ -78,7 +78,7 @@ $('li.card').on('click', function() {
 
 // toggling open and show class on clicked card
 function toggleOpenShow(card) {
-	card.addClass('open show');
+	card.addClass('open show disabled');
 }
 
 //flip cards back over after modal display
@@ -106,10 +106,10 @@ function matchedCard() {
 			}
 		} else {
 			setTimeout(function() {
-				firstCard.removeClass('open show');
-				secondCard.removeClass('open show');
+				firstCard.removeClass('open show disabled');
+				secondCard.removeClass('open show disabled');
 				allOpenedCards.length = 0;
-		}, 200);	
+		}, 300);	
 		}
 	}
 }
@@ -248,7 +248,6 @@ function restartGame() {
 function gameOver() {
 	stopTimer();
 	updateModal();
-	resetCards();
 	toggleModal();
 }
 
