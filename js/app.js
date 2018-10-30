@@ -109,7 +109,7 @@ function matchedCard() {
 				firstCard.removeClass('open show');
 				secondCard.removeClass('open show');
 				allOpenedCards.length = 0;
-		}, 500);	
+		}, 200);	
 		}
 	}
 }
@@ -234,6 +234,7 @@ function init() {
 
 //function to reset game
 function restartGame() {
+	allOpenedCards.length = 0;
 	resetTimer();
 	resetMoveCount();
 	resetStar();
